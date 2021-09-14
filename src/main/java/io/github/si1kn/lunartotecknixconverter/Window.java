@@ -1,15 +1,18 @@
-package io.github.si1kn;
+package io.github.si1kn.lunartotecknixconverter;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class Window {
 
-    private final static LunarProfiles profiles = new LunarProfiles();
+    private final static Setup profiles = new Setup();
+
+
+    public static Setup getProfiles() {
+        return profiles;
+    }
 
     public static void main(String[] args) {
         List<File> profile = profiles.loadProfiles();

@@ -1,4 +1,4 @@
-package io.github.si1kn;
+package io.github.si1kn.lunartotecknixconverter;
 
 import java.io.FileWriter;
 import java.io.IOException;
