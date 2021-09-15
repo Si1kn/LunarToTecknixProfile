@@ -3,6 +3,7 @@ package io.github.si1kn.lunartotecknixconverter;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class Window {
@@ -65,7 +66,13 @@ public class Window {
 
 
         //Setup button with the converter, and to add and set stuff to panel
-        button.addActionListener(m -> new LunarToTecknixConverter(textField.getText(), profile, cb.getSelectedIndex()));
+        button.addActionListener(m -> {
+            try {
+                new LunarToTecknixConverter(textField.getText(), profile, cb.getSelectedIndex());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         button.setVisible(true);
         textField.setVisible(true);
         panel.add(textField);
