@@ -11,7 +11,7 @@ public class LunarToTecknixConverter {
     public LunarToTecknixConverter(String tecknixProfileName, List<File> profileList, int selectedProfileAsInt) throws IOException {
         for (File file : profileList.get(selectedProfileAsInt).listFiles())
             if (file.getName().equals("mods.json")) {
-                List<String> tecknixModules = Window.getProfiles().setupTecknixProfiles(new File("C:\\Users\\si1kn\\AppData\\Roaming\\.minecraft\\Tecknix\\profiles-1.8.9\\default.cfg"));
+                List<String> tecknixModules = Window.getProfiles().setupTecknixProfiles(new File("C:\\Users\\" + System.getProperty("user.name") + "\\.lunarclient\\settings\\game"));
                 Map<String, Mod> map = Window.getProfiles().setupLunarModules(new ArrayList<>(Collections.singleton("skyblockAddons")), file);
                 Map<String, Mod> lunarTecknixModuleMap = Window.getProfiles().setupMapForModules(map, tecknixModules);
                 TecknixFileWriter fileWriter = new TecknixFileWriter(tecknixProfileName + ".cfg");
